@@ -36,9 +36,6 @@ function onReady () {
   deleteToDoItem.addEventListener('delete', () => {
     event.preventDefault();
 
-    // select item
-    document.getElementById('checkbox').checked = true;
-
     // delete selected item
     checkbox.removeChild(checkbox.checked = true);
 
