@@ -1,12 +1,18 @@
 header {
   background: url(../images/heroimage.jpg) center / cover;
   height: 200px;
-  justify-content: center;
-  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 20px;
 }
 
 .mdl-card__title-text {
   color: hsla(0, 0%, 100%, 0.9);
+  font-weight: bolder;
+  justify-content: center;
+  text-align: center;
 }
 
 .mdl-card {

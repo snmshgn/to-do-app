@@ -3,46 +3,34 @@ function onReady () {
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
-  addToDoForm.addEventListener('submit', event => {
+  addToDoForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // get the text
     let title = newToDoText.value;
-
-    // create new li
     let newLi = document.createElement('li');
-
-    // create a new input
     let checkbox = document.createElement('input');
 
-    // set the input's type to checkbox
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = "-";
+    deleteButton.className = "delete-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab";
+
+    deleteButton.addEventListener('click', function(event){
+      let buttonLiText = this.parentElement.childNodes[0].textContent;
+      toDoList.removeChild(this.parentElement)
+    });
+
     checkbox.type = "checkbox";
 
     // set the title
     newLi.textContent = title;
-
-    // attach the checkbox to the li
     newLi.appendChild(checkbox);
-
-    // attach the li to the ul
+    newLi.appendChild(deleteButton);
     toDoList.appendChild(newLi);
 
     // empty the input
     newToDoText.value = '';
 
   });
-
-  addToDoForm.addEventListener('delete', event => {
-    event.preventDefault();
-
-    // select a checkbox
-    checkbox.value = true;
-
-    // delete checked item
-    newLi.removeChild(checkbox);
-
-  });
-
 }
 
 window.onload = function () {
