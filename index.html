@@ -14,21 +14,24 @@
     <!--- Custom Styles --->
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body>
-    <h1>To-Do App</h1>
+  <body class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+      <h2 class="mdl-card__title-text">To-Do App</h2>
+    </header>
 
-    <form id="addToDoForm">
+    <form id="addToDoForm" class="mdl-card__supporting-text">
       <label for="newToDoText">New To-Do:</label>
       <input type="text" id="newToDoText">
-      <button type="submit" class="mdl-button mdl-js-button mdl-button--fab">+</button>
+      <button type="submit" class="add-button mdl-button mdl-js-button mdl-button--raised">Add</button>
+      <button type="delete" class="delete-button mdl-button mdl-js-button mdl-button--raised">Delete</button>
     </form>
 
-    <form id="deleteToDoItem">
-      <button type="delete" class="mdl-button mdl-js-button mdl-button--fab">-</button>
-    </form>
-
-    <ul id="toDoList">
+    <ul id="toDoList" class="mdl-card__supporting-text">
     </ul>
+
+  <!--  <form id="deleteToDoItem">
+      <button type="delete" class="delete-button mdl-button mdl-js-button mdl-button--raised">Delete</button>
+    </form> -->
 
     <script src="app.js"></script>
   </body>

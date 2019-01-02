@@ -1,3 +1,19 @@
+header {
+  background: url(../images/heroimage.jpg) center / cover;
+  height: 200px;
+  justify-content: center;
+  text-align: center;
+}
+
+.mdl-card__title-text {
+  color: hsla(0, 0%, 100%, 0.9);
+}
+
+.mdl-card {
+  margin: auto;
+  width: 600px;
+}
+
 .mdl-button {
   font-weight: lighter;
 }

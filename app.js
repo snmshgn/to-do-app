@@ -2,9 +2,8 @@ function onReady () {
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
-  const deleteToDoItem = document.getElementById('deleteToDoItem');
 
-  addToDoForm.addEventListener('submit', () => {
+  addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
     // get the text
@@ -33,11 +32,14 @@ function onReady () {
 
   });
 
-  deleteToDoItem.addEventListener('delete', () => {
+  addToDoForm.addEventListener('delete', event => {
     event.preventDefault();
 
-    // delete selected item
-    checkbox.removeChild(checkbox.checked = true);
+    // select a checkbox
+    checkbox.value = true;
+
+    // delete checked item
+    newLi.removeChild(checkbox);
 
   });
 
