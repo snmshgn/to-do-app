@@ -2,6 +2,7 @@ function onReady () {
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
+  const deleteToDoItem = document.getElementById('deleteToDoItem');
 
   addToDoForm.addEventListener('submit', () => {
     event.preventDefault();
@@ -31,6 +32,18 @@ function onReady () {
     newToDoText.value = '';
 
   });
+
+  deleteToDoItem.addEventListener('delete', () => {
+    event.preventDefault();
+
+    // select item
+    document.getElementById('checkbox').checked = true;
+
+    // delete selected item
+    checkbox.removeChild(checkbox.checked = true);
+
+  });
+
 }
 
 window.onload = function () {
