@@ -22,6 +22,7 @@ function onReady () {
   function renderTheUI () {
     const toDoList = document.getElementById('toDoList');
     const deleteButton = document.createElement('button');
+    deleteButton.textContent = '-';
 
     toDoList.textContent = '';
 
