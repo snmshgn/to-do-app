@@ -1,6 +1,7 @@
 function onReady () {
   const toDos = [];
   const addToDoForm = document.getElementById('addToDoForm');
+  let id = 0;
 
   function createNewToDo () {
     const newToDoText = document.getElementById('newToDoText');
@@ -8,9 +9,10 @@ function onReady () {
 
     toDos.push({
       title: newToDoText.value,
-      complete: false
+      complete: false,
+      id: i++;
     });
-    
+
     newToDoText.value = '';
 
     renderTheUI();
@@ -19,6 +21,7 @@ function onReady () {
 
   function renderTheUI () {
     const toDoList = document.getElementById('toDoList');
+    const deleteButton = document.createElement('button');
 
     toDoList.textContent = '';
 
