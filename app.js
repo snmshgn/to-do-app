@@ -10,7 +10,7 @@ function onReady () {
     toDos.push({
       title: newToDoText.value,
       complete: false,
-      id: i++;
+      id: i++
     });
 
     newToDoText.value = '';
@@ -21,8 +21,9 @@ function onReady () {
 
   function renderTheUI () {
     const toDoList = document.getElementById('toDoList');
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = '-';
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = "-";
+    deleteButton.className = "delete-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab";
 
     toDoList.textContent = '';
 
@@ -35,6 +36,7 @@ function onReady () {
 
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
+      newLi.appendChild(deleteButton);
     });
   }
 
@@ -42,6 +44,11 @@ function onReady () {
     event.preventDefault();
     createNewToDo();
   });
+
+  deleteButton.addEventListener('click', event => {
+    event.preventDefault();
+    toDoList.removeChild(newLi);
+  })
 
   renderTheUI();
 }
