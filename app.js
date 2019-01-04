@@ -13,8 +13,8 @@ function onReady(){
         CHECKBOX.type = "checkbox";
 
         const DELETE_BUTTON = document.createElement('button');
-        DELETE_BUTTON.textContent = "DELETE";
-        DELETE_BUTTON.addClass="mdl-button mdl-js-button mdl-button--raised";
+        DELETE_BUTTON.textContent = "-";
+        DELETE_BUTTON.className = "mdl-button mdl-js-button mdl-button--raised";
 
         DELETE_BUTTON.addEventListener('click', event => {
           toDos = toDos.filter(function(item){
